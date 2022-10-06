@@ -3,6 +3,7 @@ package formacionBackend5.Login.web.security;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 
+import com.auth0.jwt.impl.ClaimsHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -27,13 +28,14 @@ public class JWTUtil {
 
         String token = JWT.create()
                 .withSubject(userDetails.getUsername())
-                .withExpiresAt(new Date(System.currentTimeMillis() + 1000 * 60 * 10))
+                .withExpiresAt(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))
                 .sign(Algorithm.HMAC256(KEY));
         return token;
     }
     //Para hacer  esto bien, deberemos de crear un controlador que reciba un usuario y una contraseña, y
     //como respuesta, envie el jwt.//Antes de crear el controlador, es mejor crear un par de clases que permita configurar esto de una mejor manera
 //Estas clases son domain.dto.AuthenticationRequest y domain.dto.AuthenticationResponse
+
 
 }
 
