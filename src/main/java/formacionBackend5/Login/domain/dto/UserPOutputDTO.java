@@ -1,6 +1,6 @@
 package formacionBackend5.Login.domain.dto;
 
-import formacionBackend5.Login.domain.service.UserP;
+import formacionBackend5.Login.domain.UserP;
 import lombok.Data;
 
 import java.util.Date;

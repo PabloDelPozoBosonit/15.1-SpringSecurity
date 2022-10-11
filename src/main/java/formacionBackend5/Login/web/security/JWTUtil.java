@@ -7,7 +7,10 @@ import com.auth0.jwt.impl.ClaimsHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
+import javax.crypto.SecretKey;
 import java.util.Date;
+
+import static formacionBackend5.Login.web.config.ConstantConfiguration.SECRET;
 
 @Component
 public class JWTUtil {
@@ -20,21 +23,22 @@ public class JWTUtil {
     El ultimo es la firma, coje las dos primeras partes y las encripta segun el algoritmo deseado
     Tenemos que incluir la dependencia necesaria para utilizar esta clase
     * */
-    private static final String KEY = "boson1tP@blo";
+    //private static final String KEY = "boson1tP@blo";
 
 
     //Este metodo genera un JWT, recibe un userDetails
     public String generateToken(UserDetails userDetails ) {
 
         String token = JWT.create()
-                .withSubject(userDetails.getUsername())
+                .withSubject(userDetails.getUsername())//es el email de userP
                 .withExpiresAt(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))
-                .sign(Algorithm.HMAC256(KEY));
+                .sign(Algorithm.HMAC256(SECRET));
         return token;
     }
     //Para hacer  esto bien, deberemos de crear un controlador que reciba un usuario y una contraseña, y
-    //como respuesta, envie el jwt.//Antes de crear el controlador, es mejor crear un par de clases que permita configurar esto de una mejor manera
-//Estas clases son domain.dto.AuthenticationRequest y domain.dto.AuthenticationResponse
+    //como respuesta, envie el jwt.
+    // Antes de crear el controlador, es mejor crear un par de clases que permita configurar esto de una mejor manera
+    //Estas clases son domain.dto.AuthenticationRequest y domain.dto.AuthenticationResponse
 
 
 }

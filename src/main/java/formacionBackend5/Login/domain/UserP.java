@@ -1,4 +1,4 @@
-package formacionBackend5.Login.domain.service;
+package formacionBackend5.Login.domain;
 
 
 import formacionBackend5.Login.domain.dto.UserPInputDTO;

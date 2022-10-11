@@ -2,10 +2,12 @@ package formacionBackend5.Login.domain.service;
 
 
 
+import formacionBackend5.Login.domain.UserP;
 import formacionBackend5.Login.domain.dto.UserPInputDTO;
 import formacionBackend5.Login.domain.dto.UserPOutputDTO;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface UserPService {
 
@@ -17,5 +19,7 @@ public interface UserPService {
     List<UserP> findByName(String name);
 
     List<UserP> findAll();
+
+    Optional<UserP> findBypersonalEmail(String personalEmail);
 
 }

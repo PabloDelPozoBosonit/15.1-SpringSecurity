@@ -1,6 +1,7 @@
 package formacionBackend5.Login.domain.service;
 
 
+import formacionBackend5.Login.domain.UserP;
 import formacionBackend5.Login.exceptions.EntityNotFoundException;
 import formacionBackend5.Login.exceptions.UnprocessableEntityException;
 import formacionBackend5.Login.domain.dto.UserPInputDTO;
@@ -118,5 +119,10 @@ public class UserPServiceImpl implements UserPService {
         return userRepository.findAll();
     }
 
+
+    @Override
+    public Optional<UserP> findBypersonalEmail(String personalEmail) {
+        return userRepository.findBypersonalEmail(personalEmail);
+    }
 
 }

@@ -1,7 +1,7 @@
 package formacionBackend5.Login.web.controller;
 
 import formacionBackend5.Login.domain.service.UserPService;
-import formacionBackend5.Login.domain.service.UserP;
+import formacionBackend5.Login.domain.UserP;
 import formacionBackend5.Login.domain.dto.UserPInputDTO;
 import formacionBackend5.Login.domain.dto.UserPOutputDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,10 +61,6 @@ public class ControllerUserP {
 
     @GetMapping(value = "/findAll")
     public List<UserP> findAll() {
-        var auth = SecurityContextHolder.getContext().getAuthentication();
-        System.out.println("Datos del usuario:" + auth.getPrincipal());
-        System.out.println("Datos de los permisos" + auth.getAuthorities());
-        System.out.println("Esta autenticado" + auth.isAuthenticated());
         return usuarioService.findAll();
     }
 
