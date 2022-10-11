@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "89f3682a-1118-4b2c-bf45-1807b0f8756c",
+		"name": "Security",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22803401"
+	},
+	"item": [
+		{
+			"name": "findAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/user/findAll",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"findAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\":\"Chuchi\",\r\n    \"age\":\"40\",\r\n    \"password\":\"98456\",\r\n    \"name\":\"Jesus Javier\",\r\n    \"surname\":\"Puente\",\r\n    \"companyEmail\":\"jesus@bosonit.com\",\r\n    \"personalEmail\":\"jesus@mail.com\",\r\n    \"city\":\"Logroño\",\r\n    \"active\":\"true\",\r\n    \"createdDate\":\"2015-08-01\",\r\n    \"imagenUrl\":\"http://www.miimagen.es\",\r\n    \"terminationDate\":\"2023-01-31\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\":\"Pablo\",\r\n    \"age\":\"26\",\r\n    \"password\":\"19734\",\r\n    \"name\":\"Pablo\",\r\n    \"surname\":\"del Pozo\",\r\n    \"companyEmail\":\"pablo@bosonit.com\",\r\n    \"personalEmail\":\"pablo@mail.com\",\r\n    \"city\":\"Villar de Torre\",\r\n    \"active\":\"true\",\r\n    \"createdDate\":\"2015-08-01\",\r\n    \"imagenUrl\":\"http://www.miimagen.es\",\r\n    \"terminationDate\":\"2023-01-31\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\":\"Alba\",\r\n    \"age\":\"22\",\r\n    \"password\":\"98456\",\r\n    \"name\":\"Alba\",\r\n    \"surname\":\"Rodriguez\",\r\n    \"companyEmail\":\"alba@bosonit.com\",\r\n    \"personalEmail\":\"alba@mail.com\",\r\n    \"city\":\"Logroño\",\r\n    \"active\":\"true\",\r\n    \"createdDate\":\"2015-08-01\",\r\n    \"imagenUrl\":\"http://www.miimagen.es\",\r\n    \"terminationDate\":\"2023-01-31\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"jesus@mail.com\",\r\n    \"password\":\"98456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"pablo@mail.com\",\r\n    \"password\":\"19734\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"alba@mail.com\",\r\n    \"password\":\"98456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAll.Authentication",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYWJsb0BtYWlsLmNvbSIsImV4cCI6MTY2NTUyNzY1Nn0.WoLvPVcwaIuycc1hCv9mMCkO3auj_AcEtl69S23kSH0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/user/findAll",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"findAll"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

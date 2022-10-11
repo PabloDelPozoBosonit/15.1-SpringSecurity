@@ -1,7 +1,6 @@
 package formacionBackend5.Login.web.security.filter;
 
 
-import formacionBackend5.Login.domain.dto.AuthenticationRequest;
 import formacionBackend5.Login.web.security.JWTUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.tomcat.util.codec.binary.Base64;
@@ -48,7 +47,7 @@ public class JwtFilterRequest extends OncePerRequestFilter {
             String token = authorizationHeader.substring(7);//7 por Bearer y el espacio
             log.info("TOKEN:  " + token);
 
-            //Obtenemos el payload que es el primer bloque de digitos antes del primer .
+            //Obtenemos el payload que es el primer bloque de digitos antes del primer . del token
             String payload = token.split("\\.")[1];
             log.info("PAYLOAD:  " + payload);
 
@@ -56,17 +55,17 @@ public class JwtFilterRequest extends OncePerRequestFilter {
             String payloadDecode = new String(Base64.decodeBase64(payload),"UTF-8");
             log.info("PAYLOAD-DECODE:  " + payloadDecode);
 
-            //Y obtenemos el email {"sub":"jesus@mail.com"
+            //lo obtenemos separado por comillas
             String[] payloadDecodeSeparado = payloadDecode.split("\"");
 
+            //Del payload separado, el que nos interesa es el 3
             String email = payloadDecodeSeparado[3];
             log.info("EMAIL: " + email);
 
-
-            //Con esto simulo el metodo que extrae el username con el token, como es Jwts y esta deprecated, lo apaño asi de momento
-            //String email = "jesus@mail.com";
+            //Se lo mandamos a loadByUsername
             UserDetails userDetails = userDetailsService.loadUserByUsername(email);
 
+            //Y  comprobamos que es el
             UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
             authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
